@@ -1,0 +1,11 @@
+{
+    "BuildConfiguration": "Development",
+    "BuildPlatform": "Win64",
+    "EngineDir": "C:\\Program Files\\Epic Games\\UE_5.3",
+    "GitDir": "D:\\UnrealProjects\\MyProject",
+    "GitBranch": "main",
+    "UprojectPath": "D:\\UnrealProjects\\MyProject\\MyProject.uproject",
+    "TargetName": "MyProject",
+    "OutputDir": "./Builds",
+    "IncludeTimestamp": false
+}
