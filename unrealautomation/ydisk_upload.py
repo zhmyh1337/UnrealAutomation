@@ -30,7 +30,9 @@ def execute():
         'Authorization': 'OAuth ' + secrets['YdiskToken']
     }
 
-    dir_path = config['YdiskOutputPath'] + '/' + config['TargetName'] + '/'
+    dir_path = config['YdiskOutputPath'] + '/'
+    if config['YdiskCreateSubfolderWithTargetName']:
+        dir_path += config['TargetName'] + '/'
 
     if not create_directories(dir_path, headers):
         return False

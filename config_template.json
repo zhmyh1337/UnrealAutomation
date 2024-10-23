@@ -9,6 +9,7 @@
     "OutputDir": "./Builds",
     "IncludeTimestamp": false,
     "YdiskOutputPath": "/UnrealAutomationBuilds",
+    "YdiskCreateSubfolderWithTargetName": true,
     "YdiskShouldOverwriteExistingFile": false,
     "YdiskShouldPublish": true
 }
