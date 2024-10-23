@@ -35,9 +35,19 @@ def execute():
         return False
 
     path = dir_path + os.path.basename(ctx.archive_path)
+    path_with_messed_extension = path + '000' # to avoid throttling when uploading some type of files including .zip
+
+    if not config['YdiskShouldOverwriteExistingFile']: # making sure the file with original extension does not exist to avoid unnecessary uploading
+        params = {
+            "path": path
+        }
+        check_file_response = requests.get('https://cloud-api.yandex.net/v1/disk/resources', params=params, headers=headers)
+        if check_file_response.ok:
+            print('The file on Ydisk already exist (you can enable overwriting with YdiskShouldOverwriteExistingFile)')
+            return False
 
     params = {
-        "path": path,
+        "path": path_with_messed_extension,
         "overwrite": config['YdiskShouldOverwriteExistingFile']
     }
     get_upload_url_response = requests.get('https://cloud-api.yandex.net/v1/disk/resources/upload', params=params, headers=headers)
@@ -60,6 +70,21 @@ def execute():
 
     print('File uploaded to Ydisk')
 
+    params = {
+        "from": path_with_messed_extension,
+        "path": path,
+        "overwrite": config['YdiskShouldOverwriteExistingFile']
+    }
+    rename_response = requests.post('https://cloud-api.yandex.net/v1/disk/resources/move', params=params, headers=headers)
+    if not rename_response.ok:
+        if rename_response.json()['error'] == 'DiskResourceAlreadyExistsError':
+            print('The file on Ydisk already exist (you can enable overwriting with YdiskShouldOverwriteExistingFile)')
+        else:
+            print(f'Failed to rename file ({rename_response.status_code}) ({rename_response.text})')
+        return False
+
+    print('Renamed file to have original extension')
+
     if config['YdiskShouldPublish']:
         params = {
             "path": path
@@ -76,8 +101,8 @@ def execute():
             print(f'Failed to view published file ({publish_view_response.status_code}) ({publish_view_response.text})')
             return False
 
-        public_url = publish_view_response.json()['public_url']
+        ctx.public_url = publish_view_response.json()['public_url']
 
-        print('Ydisk public url:', public_url)
+        print('Ydisk public url:', ctx.public_url)
 
     return True
