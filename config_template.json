@@ -7,5 +7,8 @@
     "UprojectPath": "D:\\UnrealProjects\\MyProject\\MyProject.uproject",
     "TargetName": "MyProject",
     "OutputDir": "./Builds",
-    "IncludeTimestamp": false
+    "IncludeTimestamp": false,
+    "YdiskOutputPath": "/UnrealAutomationBuilds",
+    "YdiskShouldOverwriteExistingFile": false,
+    "YdiskShouldPublish": true
 }
