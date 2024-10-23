@@ -1,4 +1,5 @@
-# uploading archive to Yandex Disk (requires cloud_api:disk.write and cloud_api:disk.read (for publishing) permissions)
+# uploading archive to Yandex Disk (requires cloud_api:disk.write and cloud_api:disk.read permissions)
+# the guide to get an access token is here: https://yandex.com/dev/disk-api/doc/en/concepts/quickstart#oauth
 
 import requests
 import os
