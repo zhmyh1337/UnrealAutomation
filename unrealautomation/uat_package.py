@@ -20,7 +20,6 @@ def execute():
         f"-platform={build_platform}",
         "-UpdateIfNeeded",
         "-EditorIO",
-        "-EditorIOPort=54570",
         f"-project={uproject_path}",
         "BuildCookRun",
         "-nop4",
