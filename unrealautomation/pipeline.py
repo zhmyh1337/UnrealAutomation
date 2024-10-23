@@ -4,6 +4,7 @@ import unrealautomation.archive as archive
 import unrealautomation.generate_output_paths as generate_output_paths
 import unrealautomation.clean_output_dir as clean_output_dir
 import unrealautomation.ydisk_upload as ydisk_upload
+import unrealautomation.discord_message as discord_message
 
 
 ACTIONS = [
@@ -12,7 +13,8 @@ ACTIONS = [
     generate_output_paths,
     uat_package,
     archive,
-    ydisk_upload
+    ydisk_upload,
+    discord_message
 ]
 
 def execute_pipeline():

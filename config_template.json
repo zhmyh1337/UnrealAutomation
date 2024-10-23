@@ -11,5 +11,7 @@
     "YdiskOutputPath": "/UnrealAutomationBuilds",
     "YdiskCreateSubfolderWithTargetName": true,
     "YdiskShouldOverwriteExistingFile": false,
-    "YdiskShouldPublish": true
+    "YdiskShouldPublish": true,
+    "DiscordMessagePrefix": "",
+    "DiscordMessageUrlTitle": "New build"
 }
