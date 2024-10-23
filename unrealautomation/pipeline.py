@@ -5,6 +5,7 @@ import unrealautomation.generate_output_paths as generate_output_paths
 import unrealautomation.clean_output_dir as clean_output_dir
 import unrealautomation.ydisk_upload as ydisk_upload
 import unrealautomation.discord_message as discord_message
+import unrealautomation.wait_for_user_input as wait_for_user_input
 
 
 ACTIONS = [
@@ -12,6 +13,7 @@ ACTIONS = [
     clean_output_dir,
     generate_output_paths,
     uat_package,
+    wait_for_user_input,
     archive,
     ydisk_upload,
     discord_message
