@@ -25,8 +25,8 @@ def execute_pipeline():
         action_result = action.execute()
         print()
         if not action_result:
-            print(f'FAILED TO EXECUTE {action.__name__}')
+            print(f'\aFAILED TO EXECUTE {action.__name__}')
             return False
 
-    print('\nPIPELINE COMPLETED')
+    print('\aPIPELINE COMPLETED')
     return True
