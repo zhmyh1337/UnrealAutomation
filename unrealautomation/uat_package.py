@@ -24,8 +24,6 @@ def execute():
         "BuildCookRun",
         "-nop4",
         "-utf8output",
-        "-nocompileeditor",
-        "-skipbuildeditor",
         "-cook",
         f"-project={uproject_path}",
         f"-target={target_name}",
