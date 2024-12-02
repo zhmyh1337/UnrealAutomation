@@ -10,7 +10,7 @@ def execute():
     target_name = config['TargetName']
     build_configuration = config['BuildConfiguration']
     build_platform = config['BuildPlatform']
-    archive_dir = ctx.output_dir
+    archive_dir = ctx.unreal_archive_dir
 
     command = [
         fr"{engine_dir}/Engine/Build/BatchFiles/RunUAT.bat",

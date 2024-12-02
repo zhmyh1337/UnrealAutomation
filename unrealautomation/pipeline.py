@@ -10,8 +10,8 @@ import unrealautomation.wait_for_user_input as wait_for_user_input
 
 ACTIONS = [
     git_switch_and_pull,
-    clean_output_dir,
     generate_output_paths,
+    clean_output_dir,
     uat_package,
     wait_for_user_input,
     archive,

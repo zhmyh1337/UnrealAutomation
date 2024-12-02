@@ -17,8 +17,9 @@ def execute():
         output_name += "_" + current_timestamp.strftime("%d-%m-%Y_%H-%M-%S")
 
     ctx.output_name = output_name
-    ctx.output_dir = os.path.join(os.path.abspath(config['OutputDir']), output_name)
+    ctx.output_dir = os.path.abspath(config['OutputDir'])
+    ctx.unreal_archive_dir = os.path.join(ctx.output_dir, output_name)
 
-    print(f'output_dir = {ctx.output_dir}')
+    print(f'unreal_archive_dir = {ctx.unreal_archive_dir}')
 
     return True

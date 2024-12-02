@@ -1,6 +1,6 @@
 import os
 import shutil
-from . import config
+from . import config, ctx
 
 
 def delete_directory_contents(directory):
@@ -17,6 +17,5 @@ def delete_directory_contents(directory):
                 shutil.rmtree(file_path)
 
 def execute():
-    output_dir = os.path.abspath(config['OutputDir'])
-    delete_directory_contents(output_dir)
+    delete_directory_contents(ctx.output_dir)
     return True
