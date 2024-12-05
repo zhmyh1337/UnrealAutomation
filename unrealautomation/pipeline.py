@@ -13,8 +13,8 @@ ACTIONS = [
     generate_output_paths,
     clean_output_dir,
     uat_package,
-    wait_for_user_input,
     archive,
+    wait_for_user_input,
     ydisk_upload,
     discord_message
 ]
