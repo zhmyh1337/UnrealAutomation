@@ -10,6 +10,7 @@ def execute():
     target_name = config['TargetName']
     build_configuration = config['BuildConfiguration']
     build_platform = config['BuildPlatform']
+    with_debug_info = config['WithDebugInfo']
     archive_dir = ctx.unreal_archive_dir
 
     command = [
@@ -43,6 +44,9 @@ def execute():
         "-nocompile",
         "-nocompileuat"
     ]
+
+    if not with_debug_info:
+        command.append('-nodebuginfo')
 
     result = subprocess.run(command)
 

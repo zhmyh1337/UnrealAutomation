@@ -1,6 +1,7 @@
 {
     "BuildConfiguration": "Development",
     "BuildPlatform": "Win64",
+    "WithDebugInfo": true,
     "EngineDir": "C:\\Program Files\\Epic Games\\UE_5.3",
     "GitDir": "D:\\UnrealProjects\\MyProject",
     "GitBranch": "main",
